@@ -1,5 +1,93 @@
+@import 'variables.scss';
+
 body {
-	background-color: #222;
+	background-color: #f4f4f4;
 	font-family: Tahoma, Arial;
+	padding: 0;
+	margin: 0;
 }
 
+h1, h2, h3 ,h4 ,h5 ,h6 {
+	margin-left: 10px;
+	margin-top: 10px;
+	font-weight: normal;
+	color: #222;
+}
+
+.wrapper {
+	width: 70%;
+	min-height: 500px;
+	margin: 0 auto;
+	margin-top: 100px;
+	background: #fff;
+	border: thin solid #222;
+
+	.nav-holder {
+		width: 100%;
+		min-height: 50px;
+		background-color: green;
+
+		.nav {
+			display: inline;
+			list-style-type: none;
+			margin-left: -38px;
+
+			li {
+				display: inline-block;
+				height: 50px;
+				width: 100px;
+				margin-right: -5px;
+				text-align: center;
+				line-height: 50px;
+
+				&:hover {
+					background: darkgreen;
+				}
+
+				a {
+					display: inline-block;
+					color: #fff;
+					text-decoration: none;
+					height: 50px;
+					width: 100px;
+				}
+			}
+		}
+	}
+
+	.content {
+		width: 100%;
+		min-height: 500px;
+
+		.form {
+			float: left;
+			margin-left: 10px;
+			width: 100%;
+
+			label {
+				display: block;
+				margin-top: 10px;
+			}
+
+			input {
+				display: block;
+				margin-top: 10px;
+				padding: 5px;
+				width: 300px;
+			}
+
+			.btn {
+				background-color: green;
+				border: none;
+				width: 100px;
+				padding: 10px;
+				color: #fff;
+
+				&:hover {
+					background-color: darkgreen;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
