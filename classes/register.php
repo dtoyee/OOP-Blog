@@ -36,12 +36,12 @@ class Register {
 			if($this->valueExists("users", "email", $data[1])) {
 				if($this->passwordsMatch(array($data[2], $data[3]))) {
 					$password = $this->hashPassword($data[2]);
-					$this->conn->conn->query("
+					$this->conn->query("
 						INSERT INTO users
 						(username, email, password)
 						VALUES('$data[0]', '$data[1]', '$password')
 					");
-					$this->addMessage("Success!");
+					$this->addMessage("Your account has been registered!");
 				} else {
 					$this->addMessage($this->errorMessages["mismatching_password"]);
 				}
@@ -54,14 +54,11 @@ class Register {
 	}
 
 	private function passwordsMatch($passwords = array()) {
-		if($passwords[0] == $passwords[1]) {
-			return true;
-		}
-		return false;
+		return $passwords[0] == $passwords[1] ? true : false;
 	}
 
 	private function valueExists($table, $row, $value) {
-		$query = $this->conn->conn->query("SELECT $row FROM $table WHERE $row = '$value'");
+		$query = $this->conn->query("SELECT $row FROM $table WHERE $row = '$value'");
 		return $query->num_rows == 0 ? true : false;
 	}
 
