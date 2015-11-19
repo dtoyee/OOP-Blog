@@ -4,11 +4,6 @@ session_start();
 
 include 'config/init.php';
 
-$db = new Database();
-$validator = new FormValidator();
-$login = new Login($db);
-$misc = new Misc();
-
 if(isset($_POST['submit'])) {
 	$validator->addRule('username', 'Username is a required field', 'required');
     $validator->addRule('username', 'Username must be longer than 2 characters', 'minlength', 2);

@@ -4,10 +4,6 @@ session_start();
 
 include 'config/init.php';
 
-$db = new Database;
-$misc = new Misc;
-$config = new Config;
-
 ?>
 
 <!DOCTYPE html>
