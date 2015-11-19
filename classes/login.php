@@ -1,5 +1,7 @@
 <?php
 
+include 'config/init.php';
+
 class Login {
 	/*
 	 * An array to hold all errors
@@ -9,6 +11,10 @@ class Login {
 	 * Hold the database connection
 	 */
 	private $conn = null;
+	/*
+	 * Hold the config
+	 */
+	private $config = null;
 	/*
 	 * All the possible login errors
 	 */
@@ -21,6 +27,9 @@ class Login {
 		if($this->conn == null) {
 			$this->conn = $db;
 		}
+		if($this->config == null) {
+			$this->config = new Config();
+		}
 	}
 	/*
 	 * We assume that we are passing through just the username and password details
@@ -30,8 +39,8 @@ class Login {
 	public function login($data = array()) {
 		if($this->usernameExists("users", $data[0])) {
 			if($this->verifyPassword($data[1], $this->getPassword("users", $data[0]))) {
-				// Need to handle session
-				$this->addMessage("Success");
+				$_SESSION[$this->config->sessionName] = $data[0];
+				header("Location: index");
 			} else {
 				$this->addMessage($this->errorMessages[1]);
 			}

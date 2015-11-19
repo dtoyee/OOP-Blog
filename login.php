@@ -1,13 +1,13 @@
 <?php
 
-include 'classes/database.php';
-include 'classes/formvalidator.php';
-include 'classes/validationrule.php';
-include 'classes/login.php';
+session_start();
+
+include 'config/init.php';
 
 $db = new Database();
 $validator = new FormValidator();
 $login = new Login($db);
+$misc = new Misc();
 
 if(isset($_POST['submit'])) {
 	$validator->addRule('username', 'Username is a required field', 'required');
@@ -45,13 +45,7 @@ if(isset($_POST['submit'])) {
 	<body>
 
 		<div class="wrapper">
-			<nav class="nav-holder">
-				<ul class="nav">
-					<li><a href="index">Home</a></li>
-					<li><a href="register">Register</a></li>
-					<li><a href="login">Login</a></li>
-				</ul>
-			</nav>
+			<?php include 'inc/nav.php' ?>
 
 			<section class="content">
 				<h2>Account Login</h2>
