@@ -2,17 +2,20 @@ body { background-color: #f4f4f4; font-family: Tahoma, Arial; padding: 0; margin
 
 h1, h2, h3, h4, h5, h6 { margin-left: 10px; margin-top: 10px; font-weight: normal; color: #222; }
 
-.wrapper { width: 70%; min-height: 500px; margin: 0 auto; margin-top: 100px; background: #fff; border: thin solid #222; }
+.wrapper { width: 70%; min-height: 500px; margin: 0 auto; margin-top: 100px; }
 .wrapper .nav-holder { width: 100%; min-height: 50px; background-color: green; }
 .wrapper .nav-holder .nav { display: inline; list-style-type: none; margin-left: -38px; }
 .wrapper .nav-holder .nav li { display: inline-block; height: 50px; width: 100px; margin-right: -5px; text-align: center; line-height: 50px; }
 .wrapper .nav-holder .nav li:hover { background: darkgreen; }
 .wrapper .nav-holder .nav li a { display: inline-block; color: #fff; text-decoration: none; height: 50px; width: 100px; }
-.wrapper .content { width: 100%; min-height: 500px; }
-.wrapper .content .form { float: left; margin-left: 10px; width: 100%; }
-.wrapper .content .form label { display: block; margin-top: 10px; }
-.wrapper .content .form input { display: block; margin-top: 10px; padding: 5px; width: 300px; }
-.wrapper .content .form .btn { background-color: green; border: none; width: 100px; padding: 10px; color: #fff; }
-.wrapper .content .form .btn:hover { background-color: darkgreen; cursor: pointer; }
+.wrapper .left { float: left; width: 71%; min-height: 500px; background-color: #fff; margin-top: 10px; border: thin solid #E3E3E3; }
+.wrapper .left .form { float: left; margin-left: 10px; width: 100%; margin-bottom: 10px; }
+.wrapper .left .form label { display: block; margin-top: 10px; }
+.wrapper .left .form input { display: block; margin-top: 10px; padding: 5px; width: 300px; }
+.wrapper .left .form .btn { background-color: green; border: none; width: 100px; padding: 10px; color: #fff; }
+.wrapper .left .form .btn:hover { background-color: darkgreen; cursor: pointer; }
+.wrapper .left .error { width: 98%; height: 30px; background-color: green; overflow: hidden; margin: 0 auto; line-height: 30px; color: #fff; }
+.wrapper .left .error .msg { margin-left: 10px; }
+.wrapper .right { float: left; width: 27%; min-height: 500px; background-color: #fff; margin-top: 10px; margin-left: 1%; border: thin solid #E3E3E3; }
 
 /*# sourceMappingURL=style.css.map */

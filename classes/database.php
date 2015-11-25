@@ -1,5 +1,7 @@
 <?php
 
+include 'entry.php';
+
 class Database {
 	private $host = "localhost";
 	private $username = "root";
@@ -21,7 +23,20 @@ class Database {
 	}
 
 	public function query($sql) {
-		$query = $this->conn->query($sql) or die(mysqli_error($this->conn->conn));
+		$query = $this->conn->query($sql) or die(mysqli_error($this->conn));
 		return $query;
+	}
+
+	public function tableExists($table) {
+		$table = $this->query("SHOW TABLES LIKE '$table'") or die(mysqli_error($this->conn));
+		return $table->num_rows;
+	}
+
+	public function getAllEntries($sql) {
+		$entries = $this->query($sql);
+		while($rows = $entries->fetch_assoc()) {
+			$data[] = new Entry($rows);
+		}
+		return !(empty($data)) ? $data : false;
 	}
 }

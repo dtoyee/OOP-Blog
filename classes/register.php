@@ -13,9 +13,9 @@ class Register {
 	 * All the possible registration errors
 	 */
 	private $errorMessages = array(
-		"mismatching_password" 	=> "Both passwords much match.",
-		"username_taken"		=> "That username is already in use.",
-		"email_taken" 			=> "That email is already in use."
+		"Both passwords much match.",
+		"That username is already in use.",
+		"That email is already in use."
 	);
 
 	public function __construct($db) {
@@ -43,13 +43,13 @@ class Register {
 					");
 					$this->addMessage("Your account has been registered!");
 				} else {
-					$this->addMessage($this->errorMessages["mismatching_password"]);
+					$this->addMessage($this->errorMessages[0]);
 				}
 			} else {
-				$this->addMessage($this->errorMessages["email_taken"]);
+				$this->addMessage($this->errorMessages[2]);
 			}
 		} else {
-			$this->addMessage($this->errorMessages["username_taken"]);
+			$this->addMessage($this->errorMessages[1]);
 		}
 	}
 

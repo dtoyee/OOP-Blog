@@ -42,7 +42,7 @@ if(isset($_POST['submit'])) {
 		<div class="wrapper">
 			<?php include 'inc/nav.php' ?>
 
-			<section class="content">
+			<aside class="left">
 				<h2>Account Login</h2>
 				<form action="" method="post" class="form">
 					<label>Username</label>
@@ -55,15 +55,17 @@ if(isset($_POST['submit'])) {
 				<?php
 					if(!empty($errors)) {
 						foreach($errors as $error => $msg) {
-							echo $msg.'<br>';
+							echo "<div class='error'><span class='msg'>".$msg."</span></div>";
 						}
 					}
 
 					if(!empty($login->showMessage())) {
-						echo $login->showMessage();
+						echo "<br><div class='error'><span class='msg'>".$login->showMessage()."</span></div>";
 					}
 				?>
-			</section>
+			</aside>
+
+			<?php include 'inc/right.php' ?>
 		</div>
 	
 	</body>

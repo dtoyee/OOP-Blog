@@ -19,8 +19,6 @@ h1, h2, h3 ,h4 ,h5 ,h6 {
 	min-height: 500px;
 	margin: 0 auto;
 	margin-top: 100px;
-	background: #fff;
-	border: thin solid #222;
 
 	.nav-holder {
 		width: 100%;
@@ -55,14 +53,19 @@ h1, h2, h3 ,h4 ,h5 ,h6 {
 		}
 	}
 
-	.content {
-		width: 100%;
+	.left {
+		float: left;
+		width: 71%;
 		min-height: 500px;
+		background-color: #fff;
+		margin-top: 10px;
+		border: thin solid #E3E3E3;
 
 		.form {
 			float: left;
 			margin-left: 10px;
 			width: 100%;
+			margin-bottom: 10px;
 
 			label {
 				display: block;
@@ -89,5 +92,29 @@ h1, h2, h3 ,h4 ,h5 ,h6 {
 				}
 			}
 		}
+
+		.error {
+			width: 98%;
+			height: 30px;
+			background-color: green;
+			overflow: hidden;
+			margin: 0 auto;
+			line-height: 30px;
+			color: #fff;
+
+			.msg {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	.right {
+		float: left;
+		width: 27%;
+		min-height: 500px;
+		background-color: #fff;
+		margin-top: 10px;
+		margin-left: 1%;
+		border: thin solid #E3E3E3;
 	}
 }

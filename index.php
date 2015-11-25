@@ -18,9 +18,11 @@ include 'config/init.php';
 		<div class="wrapper">
 			<?php include 'inc/nav.php' ?>
 
-			<section class="content">
-				
-			</section>
+			<aside class="left">
+
+			</aside>
+
+			<?php include 'inc/right.php' ?>
 		</div>
 	</body>
 </html>
