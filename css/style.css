@@ -11,11 +11,18 @@ h1, h2, h3, h4, h5, h6 { margin-left: 10px; margin-top: 10px; font-weight: norma
 .wrapper .left { float: left; width: 71%; min-height: 500px; background-color: #fff; margin-top: 10px; border: thin solid #E3E3E3; }
 .wrapper .left .form { float: left; margin-left: 10px; width: 100%; margin-bottom: 10px; }
 .wrapper .left .form label { display: block; margin-top: 10px; }
-.wrapper .left .form input { display: block; margin-top: 10px; padding: 5px; width: 300px; }
+.wrapper .left .form input { display: block; margin-top: 10px; padding: 5px; width: 500px; }
+.wrapper .left .form textarea { display: block; margin-top: 10px; padding: 5px; }
 .wrapper .left .form .btn { background-color: green; border: none; width: 100px; padding: 10px; color: #fff; }
 .wrapper .left .form .btn:hover { background-color: darkgreen; cursor: pointer; }
+.wrapper .left article { width: 98%; margin: 0 auto; margin-top: 10px; margin-bottom: 10px; }
+.wrapper .left article header a { color: green; text-decoration: none; font-size: 1.6em; }
+.wrapper .left article header a:hover { color: darkgreen; text-decoration: underline; }
+.wrapper .left article .time { font-size: small; color: #ccc; }
+.wrapper .left article .body { margin-top: 5px; font-size: small; }
 .wrapper .left .error { width: 98%; height: 30px; background-color: green; overflow: hidden; margin: 0 auto; line-height: 30px; color: #fff; }
 .wrapper .left .error .msg { margin-left: 10px; }
+.wrapper .left hr { width: 98%; border: thin solid #f4f4f4; }
 .wrapper .right { float: left; width: 27%; min-height: 500px; background-color: #fff; margin-top: 10px; margin-left: 1%; border: thin solid #E3E3E3; }
 
 /*# sourceMappingURL=style.css.map */

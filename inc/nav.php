@@ -4,7 +4,7 @@
 		<?php
 			if($misc->loggedIn()) {
 				echo '
-					<li><a href="new">New Post</a></li>
+					<li><a href="new">New Entry</a></li>
 					<li><a href="logout">Logout</a></li>
 				';
 			} else {

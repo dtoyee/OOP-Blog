@@ -1,3 +1,4 @@
-IndexIgnore *
-
 Options +Multiviews
+RewriteEngine on
+
+IndexIgnore *

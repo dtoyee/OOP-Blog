@@ -1,6 +1,6 @@
 <?php
 
-include 'entry.php';
+include 'classes/entry.php';
 
 class Database {
 	private $host = "localhost";
@@ -35,6 +35,14 @@ class Database {
 	public function getAllEntries($sql) {
 		$entries = $this->query($sql);
 		while($rows = $entries->fetch_assoc()) {
+			$data[] = new Entry($rows);
+		}
+		return !(empty($data)) ? $data : false;
+	}
+
+	public function getEntryById($id) {
+		$entry = $this->query("SELECT * FROM entries WHERE id = '$id'");
+		while($rows = $entry->fetch_assoc()) {
 			$data[] = new Entry($rows);
 		}
 		return !(empty($data)) ? $data : false;

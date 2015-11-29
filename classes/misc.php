@@ -15,14 +15,18 @@ class Misc {
 		return isset($_SESSION[$this->config->sessionName]) ? true : false;
 	}
 
-	public function logout() {
+	public function logout($location) {
 		if(isset($_SESSION[$this->config->sessionName])) {
 			session_destroy();
-			$this->redirect("index");
+			$this->redirect($location);
 		}
 	}
 
 	public function redirect($location) {
 		header("Location: ".$location);
+	}
+
+	public function convertDate($dateFormat, $date) {
+		return date($dateFormat, strtotime($date));
 	}
 }

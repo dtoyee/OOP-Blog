@@ -5,9 +5,8 @@ session_start();
 include 'config/init.php';
 
 if(isset($_POST['submit'])) {
-	$validator->addRule('username', 'Username is a required field', 'required');
-    $validator->addRule('username', 'Username must be longer than 2 characters', 'minlength', 2);
-    $validator->addRule('password1', 'Password is a required field', 'required');
+	$validator->addRule('title', 'Title is a required field', 'required');
+	$validator->addRule('body', 'Body is a required field', 'required');
 
     $validator->addEntries($_POST);
     $validator->validate();
@@ -17,18 +16,19 @@ if(isset($_POST['submit'])) {
     foreach ($entries as $key => $value) {
         ${$key} = $value;
     }
+
+    $success = array();
     
     if (!$validator->foundErrors()) {
-        $login->login(array(
-        	$_POST['username'],
-        	$_POST['password1']
-        ));
+        $db->query("INSERT INTO entries (title, body, author)
+        			VALUES('".$_POST['title']."', '".$_POST['body']."', '".$_SESSION[$config->sessionName]."')");
+        $success[] = "Your entry has been added.";
     } else {
     	$errors = $validator->getErrors();
     }
 }
 
-if($misc->loggedIn()) {
+if(!$misc->loggedIn()) {
 	$misc->redirect("index");
 }
 
@@ -47,15 +47,14 @@ if($misc->loggedIn()) {
 			<?php include 'inc/nav.php' ?>
 
 			<aside class="left">
-				<h2>Account Login</h2>
-				<form action="" method="post" class="form">
-					<label>Username</label>
-					<input type="text" name="username" placeholder="Username">
-					<label>Password</label>
-					<input type="password" name="password1" placeholder="Password">
-					<input type="submit" name="submit" value="Login" class="btn">
+				<h2>New Entry</h2>
+				<form method="post" action="" class="form">
+					<label>Title</label>
+					<input type="text" name="title" placeholder="Title">
+					<label>Body</label>
+					<textarea cols="70" rows="10" placeholder="Body" name="body"></textarea>
+					<input type="submit" name="submit" value="Add" class="btn">
 				</form>
-
 				<?php
 					if(!empty($errors)) {
 						foreach($errors as $error => $msg) {
@@ -63,14 +62,15 @@ if($misc->loggedIn()) {
 						}
 					}
 
-					if(!empty($login->showMessage())) {
-						echo "<br><div class='error'><span class='msg'>".$login->showMessage()."</span></div>";
+					if(!empty($success) && is_array($success)) {
+						foreach($success as $suc) {
+							echo "<br><div class='error'><span class='msg'>".$suc."</span></div>";
+						}
 					}
 				?>
 			</aside>
 
 			<?php include 'inc/right.php' ?>
 		</div>
-	
 	</body>
 </html>

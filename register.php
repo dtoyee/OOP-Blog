@@ -32,6 +32,10 @@ if(isset($_POST['submit'])) {
     }
 }
 
+if($misc->loggedIn()) {
+	$misc->redirect("index");
+}
+
 ?>
 
 <!DOCTYPE html>

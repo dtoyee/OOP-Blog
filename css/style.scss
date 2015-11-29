@@ -76,7 +76,13 @@ h1, h2, h3 ,h4 ,h5 ,h6 {
 				display: block;
 				margin-top: 10px;
 				padding: 5px;
-				width: 300px;
+				width: 500px;
+			}
+
+			textarea {
+				display: block;
+				margin-top: 10px;
+				padding: 5px;
 			}
 
 			.btn {
@@ -93,6 +99,36 @@ h1, h2, h3 ,h4 ,h5 ,h6 {
 			}
 		}
 
+		article {
+			width: 98%;
+			margin: 0 auto;
+			margin-top: 10px;
+			margin-bottom: 10px;
+
+			header {
+				a {
+					color: green;
+					text-decoration: none;
+					font-size: 1.6em;
+
+					&:hover {
+						color: darkgreen;
+						text-decoration: underline;
+					}
+				}
+			}
+
+			.time {
+				font-size: small;
+				color: #ccc;
+			}
+
+			.body {
+				margin-top: 5px;
+				font-size: small;
+			}
+		}
+
 		.error {
 			width: 98%;
 			height: 30px;
@@ -105,6 +141,11 @@ h1, h2, h3 ,h4 ,h5 ,h6 {
 			.msg {
 				margin-left: 10px;
 			}
+		}
+
+		hr {
+			width: 98%;
+			border: thin solid #f4f4f4;
 		}
 	}
 
