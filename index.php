@@ -3,11 +3,8 @@
 session_start();
 
 include 'config/init.php';
-
-//include the class
 include('classes/paginator.php');
 
-//create new object pass in number of pages and identifier
 $pages = new Paginator('5','p');
 
 $rows = $db->query('SELECT COUNT(id) FROM entries');
