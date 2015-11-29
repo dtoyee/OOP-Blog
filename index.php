@@ -22,7 +22,6 @@ $entry = $db->getAllEntries("SELECT * FROM entries ORDER BY id DESC ".$pages->ge
 		<meta charset="UTF-8">
 		<title>OOP Blog</title>
 		<link href="css/style.css" rel="stylesheet">
-		<link href="css/paginator.css" rel="stylesheet">
 	</head>
 	<body>
 

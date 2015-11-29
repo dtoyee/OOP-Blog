@@ -31,3 +31,17 @@ if(!$db->tableExists("entries")) {
 } else {
 	echo "Entries table already exists.<br>";
 }
+
+if(!$db->tableExists("comments")) {
+	$comments_table = $db->query("CREATE TABLE IF NOT EXISTS comments(
+						   id INT(11) NOT NULL AUTO_INCREMENT,
+						   entry_id INT(11) NOT NULL,
+						   username VARCHAR(30) NOT NULL,
+						   comment VARCHAR(255) NOT NULL,
+						   date_posted timestamp default current_timestamp,
+						   primary key(id)
+						)");
+	echo "Comments table has been created.<br>";
+} else {
+	echo "Comments table already exists.<br>";
+}

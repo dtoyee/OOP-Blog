@@ -23,6 +23,12 @@ h1, h2, h3, h4, h5, h6 { margin-left: 10px; margin-top: 10px; font-weight: norma
 .wrapper .left .error { width: 98%; height: 30px; background-color: green; overflow: hidden; margin: 0 auto; line-height: 30px; color: #fff; }
 .wrapper .left .error .msg { margin-left: 10px; }
 .wrapper .left hr { width: 98%; border: thin solid #f4f4f4; }
+.wrapper .left .pagination { clear: both; padding: 0; }
+.wrapper .left .pagination li { display: inline; }
+.wrapper .left .pagination a { border: 1px solid #D5D5D5; color: #666666; font-size: 11px; font-weight: bold; height: 25px; padding: 4px 8px; text-decoration: none; margin: 2px; }
+.wrapper .left .pagination a:hover, .wrapper .left .pagination a:active { background: #efefef; }
+.wrapper .left .pagination span.current { background-color: #687282; border: 1px solid #D5D5D5; color: #ffffff; font-size: 11px; font-weight: bold; height: 25px; padding: 4px 8px; text-decoration: none; margin: 2px; }
+.wrapper .left .pagination span.disabled { border: 1px solid #EEEEEE; color: #DDDDDD; margin: 2px; padding: 2px 5px; }
 .wrapper .right { float: left; width: 27%; min-height: 500px; background-color: #fff; margin-top: 10px; margin-left: 1%; border: thin solid #E3E3E3; }
 
 /*# sourceMappingURL=style.css.map */
