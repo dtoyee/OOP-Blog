@@ -2,7 +2,12 @@
 
 session_start();
 
-include 'config/init.php';
+include 'load.php';
+
+$db = new Database();
+$validator = new FormValidator();
+$register = new Register($db);
+$misc = new Misc;
 
 if(isset($_POST['submit'])) {
 	$validator->addRule('username', 'Username is a required field', 'required');
@@ -71,8 +76,8 @@ if($misc->loggedIn()) {
 						}
 					}
 
-					if(!empty($login->showMessage())) {
-						echo "<br><div class='error'><span class='msg'>".$login->showMessage()."</span></div>";
+					if(!empty($register->showMessage())) {
+						echo "<br><div class='error'><span class='msg'>".$register->showMessage()."</span></div>";
 					}
 				?>
 				<br>

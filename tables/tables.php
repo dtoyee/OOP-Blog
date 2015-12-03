@@ -45,3 +45,15 @@ if(!$db->tableExists("comments")) {
 } else {
 	echo "Comments table already exists.<br>";
 }
+
+if(!$db->tableExists("votes")) {
+	$votes_table = $db->query("CREATE TABLE IF NOT EXISTS votes(
+						   id INT(11) NOT NULL AUTO_INCREMENT,
+						   entry_id INT(11) NOT NULL,
+						   voter_ip VARCHAR(32) NOT NULL,
+						   primary key(id)
+						)");
+	echo "Votes table has been created.<br>";
+} else {
+	echo "Votes table already exists.<br>";
+}

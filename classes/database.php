@@ -1,7 +1,5 @@
 <?php
 
-include 'classes/entry.php';
-
 class Database {
 	private $host = "localhost";
 	private $username = "root";
@@ -38,6 +36,10 @@ class Database {
 			$data[] = new Entry($rows);
 		}
 		return !(empty($data)) ? $data : false;
+	}
+
+	public function protectString($str) {
+		return $this->conn->real_escape_string(trim($str));
 	}
 
 	public function getEntryById($id) {

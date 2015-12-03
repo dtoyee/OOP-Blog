@@ -2,7 +2,12 @@
 
 session_start();
 
-include 'config/init.php';
+include 'load.php';
+
+$db = new Database();
+$config = new Config();
+$validator = new FormValidator();
+$misc = new Misc();
 
 if(isset($_POST['submit'])) {
 	$validator->addRule('title', 'Title is a required field', 'required');
@@ -21,7 +26,7 @@ if(isset($_POST['submit'])) {
     
     if (!$validator->foundErrors()) {
         $db->query("INSERT INTO entries (title, body, author)
-        			VALUES('".$_POST['title']."', '".$_POST['body']."', '".$_SESSION[$config->sessionName]."')");
+        			VALUES('".$_POST['title']."', '".$_POST['body']."', '".$misc->getSession()."')");
         $success[] = "Your entry has been added.";
     } else {
     	$errors = $validator->getErrors();

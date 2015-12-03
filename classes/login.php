@@ -1,7 +1,5 @@
 <?php
 
-include 'config/init.php';
-
 class Login {
 	/*
 	 * An array to hold all errors
@@ -39,7 +37,7 @@ class Login {
 	public function login($data = array()) {
 		if($this->usernameExists("users", $data[0])) {
 			if($this->verifyPassword($data[1], $this->getPassword("users", $data[0]))) {
-				$_SESSION[$this->config->sessionName] = $data[0];
+				$_SESSION[$this->config->getSessionName()] = $data[0];
 				header("Location: index");
 			} else {
 				$this->addMessage($this->errorMessages[1]);

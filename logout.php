@@ -2,6 +2,8 @@
 
 session_start();
 
-include 'config/init.php';
+include 'load.php';
+
+$misc = new Misc();
 
 $misc->logout("index");

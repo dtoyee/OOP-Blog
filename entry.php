@@ -2,7 +2,10 @@
 
 session_start();
 
-include 'config/init.php';
+include 'load.php';
+
+$db = new Database();
+$misc = new Misc();
 
 ?>
 

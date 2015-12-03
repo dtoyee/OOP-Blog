@@ -1,5 +1,9 @@
 <?php
 
 class Config {
-	public $sessionName = "blog_user";
+	private $sessionName = "blog_user";
+
+	public function getSessionName() {
+		return $this->sessionName;
+	}
 }
